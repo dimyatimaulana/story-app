@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title><%= htmlWebpackPlugin.options.title %> | Story App</title>
+  </head>
+  <body class="container row flex-nowrap">
+    <header class="bg-dark col-auto col-md-4 col-lg-3 min-vh-100 d-flex flex-column justify-content-between">
+      <nav-app brandName="<%= brandName %>"></nav-app>
+    </header>
+    <main class="main-container">
+      <div class="container py-3">
+        <h1 class="mb-3">Stories</h1>
+
+        <!-- Stories -->
+        <story-card></story-card>
+      </div>
+    </main>
+  </div>
+  </body>
+</html>

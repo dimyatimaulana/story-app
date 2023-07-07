@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title><%= htmlWebpackPlugin.options.title %> | Story App</title>
+  </head>
+  <body class="container row flex-nowrap">
+    <header class="bg-dark col-auto col-md-4 col-lg-3 min-vh-100 d-flex flex-column">
+      <nav-app brandName="<%= brandName %>"></nav-app>
+    </header>
+    <main class="main-container">
+      <div class="container py-3">
+        <h1 class="mb-3">Add Stories</h1>
+
+        <!--Add Stories -->
+        <form class="row g-3" id="addStory" novalidate>
+          <div class="col-12 col-md-6">
+            <label for="validationCustomDesc" class="form-label">Nama</label>
+            <textarea-with-validation
+              type="text"
+              inputId="validationCustomDesc"
+              invalidFeedbackMessage="Wajib diisi"
+              required
+            ></textarea-with-validation>
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="validationPhoto" class="form-label">Upload Photo</label>
+            <input-image
+              inputId="validationPhoto"
+              invalidFeedbackMessage="Wajib diisi"
+              required
+            ></input-image>
+          </div>
+          <div class="col-12 text-end">
+            <button class="btn btn-dark" type="submit">Post</button>
+          </div>
+        </form>   
+      </div>
+    </main>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title><%= htmlWebpackPlugin.options.title %> | Money Tracker App</title>
+  </head>
+  <body class="container row flex-nowrap">
+    <header class="bg-dark col-auto col-md-4 col-lg-3 min-vh-100 d-flex flex-column">
+      <nav-app brandName="<%= brandName %>"></nav-app>
+    </header>
+
+    <main>
+      <div class="main-content">
+        <div class="container py-5">
+          <h1 class="mb-3">Edit Profile</h1>
+
+          <form class="col g-3" id="editUserForm" novalidate>
+            <div class="col-12 col-md-6">
+              <label for="validationCustomUserName" class="form-label">Name</label>
+              <input-with-validation
+                id="inputNameEdit"
+                type="text"
+                inputId="validationCustomName"
+                invalidFeedbackMessage="Wajib diisi"
+                required
+              ></input-with-validation>
+            </div>
+
+            <div class="col-12 text-end">
+              <button class="btn btn-dark" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

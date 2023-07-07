@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= htmlWebpackPlugin.options.title %> | Money Tracker App</title>
+  </head>
+  <body class="container row flex-nowrap">
+    <header class="bg-dark col-auto col-md-4 col-lg-3 min-vh-100 d-flex flex-column">
+      <nav-app brandName="<%= brandName %>"></nav-app>
+    </header>
+
+    <main>
+      <div class="main-content">
+        <div class="container py-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="mb-3">Profile</h1>
+                <div id="btnEditUser"></div>
+              </div>
+
+          <div class="row mb-5 g-3 justify-content-center">
+            <div class="col-12 col-sm-6 col-lg-4">
+              <card-profile
+                id="userProfile"
+                classes="h-400 bg-dark text-bg-primary bg-gradient"
+              ></card-profile>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
