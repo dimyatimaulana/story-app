@@ -1,1 +1,37 @@
 @use 'vendors';
+
+$primary-color: #212529;
+$text-color: rgb(255, 255, 255);
+
+@mixin bg-color {
+    background-color: $primary-color;
+}
+
+@mixin hover-bold {
+    &:hover {
+        font-weight: 600;
+    }
+}
+
+header {
+    @include bg-color;
+    #brandName {
+        @include hover-bold;
+    }
+    li {
+        list-style: none;
+        @include hover-bold();
+    }
+}
+
+
+.card {
+    @include bg-color;
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+.btn {
+    @include bg-color;
+    color: white;
+}

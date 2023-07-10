@@ -6,7 +6,7 @@
     <title><%= htmlWebpackPlugin.options.title %> | Story App</title>
   </head>
   <body class="container row flex-nowrap">
-    <header class="bg-dark col-auto col-md-4 col-lg-3 min-vh-100 d-flex flex-column">
+    <header class="col-auto col-md-4 col-lg-3 min-vh-100 d-flex flex-column">
       <nav-app brandName="<%= brandName %>"></nav-app>
     </header>
     <main class="main-container">
@@ -16,7 +16,7 @@
         <!--Add Stories -->
         <form class="row g-3" id="addStory" novalidate>
           <div class="col-12 col-md-6">
-            <label for="validationCustomDesc" class="form-label">Nama</label>
+            <label for="validationCustomDesc" class="form-label">Description</label>
             <textarea-with-validation
               type="text"
               inputId="validationCustomDesc"
@@ -33,7 +33,7 @@
             ></input-image>
           </div>
           <div class="col-12 text-end">
-            <button class="btn btn-dark" type="submit">Post</button>
+            <button class="btn bg-gradient" type="submit">Post</button>
           </div>
         </form>   
       </div>

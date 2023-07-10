@@ -32,7 +32,7 @@ const Profile = {
 
     const btnEditUser = document.querySelector('#btnEditUser');
     btnEditUser.innerHTML = `
-    <a class="btn btn-dark text-capitalize" href="/profile/edit.html?id=${
+    <a class="btn bg-gradient text-capitalize" href="/profile/edit.html?id=${
       userData.id
     }">Edit User</a>
     `

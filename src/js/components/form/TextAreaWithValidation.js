@@ -1,7 +1,7 @@
 import { html, nothing } from 'lit';
 import LitWithoutShadowDom from '../base/LitWithoutShadowDom';
 
-class TextareaWithValidation extends LitWithoutShadowDom {
+class TextAreaWithValidation extends LitWithoutShadowDom {
   static properties = {
     value: { type: String, reflect: true },
     rows: { type: Number, reflect: true },
@@ -54,4 +54,4 @@ class TextareaWithValidation extends LitWithoutShadowDom {
   }
 }
 
-customElements.define('textarea-with-validation', TextareaWithValidation);
+customElements.define('textarea-with-validation', TextAreaWithValidation);

@@ -19,9 +19,9 @@ class NavApp extends LitWithoutShadowDom {
 
   render() {
     return html`
-        <div class="bg-dark p-2 p-md-4">
+        <div class="p-2 p-md-4">
           <a class="d-flex text-decoration-none text-white">
-            <span class="fs-4 d-none d-sm-inline">${this.brandName}</span>
+            <span id="brandName" class="fs-4 d-none d-sm-inline">${this.brandName}</span>
           </a>
           <nav-links>
         </div>
