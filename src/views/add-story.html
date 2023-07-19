@@ -4,18 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title><%= htmlWebpackPlugin.options.title %> | Story App</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   </head>
-  <body class="container row flex-nowrap">
-    <header class="col-auto col-md-4 col-lg-3 min-vh-100 d-flex flex-column">
+  <body class="d-flex flex-nowrap">
+    <header class="position-relative col-auto col-md-4 col-lg-3 min-vh-100 d-flex flex-column">
       <nav-app brandName="<%= brandName %>"></nav-app>
     </header>
-    <main class="main-container">
+    <main class="main-container" style="width: 100%;">
       <div class="container py-3">
-        <h1 class="mb-3">Add Stories</h1>
+        <h1 class="mb-3 px-2">Add Stories</h1>
 
         <!--Add Stories -->
-        <form class="row g-3" id="addStory" novalidate>
-          <div class="col-12 col-md-6">
+        <form class="row d-lg-flex flex-column g-3" id="addStory" novalidate>
+          <div class="col-12 col-sm-10">
             <label for="validationCustomDesc" class="form-label">Description</label>
             <textarea-with-validation
               type="text"
@@ -24,7 +28,7 @@
               required
             ></textarea-with-validation>
           </div>
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-sm-10 col-lg-6">
             <label for="validationPhoto" class="form-label">Upload Photo</label>
             <input-image
               inputId="validationPhoto"
@@ -32,7 +36,7 @@
               required
             ></input-image>
           </div>
-          <div class="col-12 text-end">
+          <div class="col-12 col-sm-10 text-end">
             <button class="btn bg-gradient" type="submit">Post</button>
           </div>
         </form>   

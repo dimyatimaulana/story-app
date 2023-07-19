@@ -31,9 +31,34 @@ header {
     padding: 1rem;
 }
 
+#cardStory {
+    @media only screen and (min-width: 650px) {
+        min-width: 350px;
+    }
+    @media only screen and (min-width: 768px) {
+        min-width: 400px;
+    }
+    @media only screen and (min-width: 992px) {
+        min-width: 580px;
+    }
+}
+
 .btn {
     @include bg-color;
     color: white;
+}
+
+#storyContainer {
+    @media only screen and (min-width: 400px) {
+        padding-left: 40px;
+    }
+}
+
+#addStory {
+    @media only screen and (min-width: 578px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 footer {

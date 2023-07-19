@@ -1,5 +1,9 @@
+import CheckUserAuth from '../auth/check-auth-user';
+import Stories from '../../network/stories';
+
 const AddStory = {
   async init() {
+    CheckUserAuth.checkLoginState();
     this._initialListener();
   },
 
@@ -18,14 +22,22 @@ const AddStory = {
     );
   },
 
-  _sendPost() {
+  async _sendPost() {
     const formData = this._getFormData();
 
     if (this._validateFormData({ ...formData })) {
       console.log('formData');
       console.log(formData);
 
-      // this._goToDashboardPage();
+      try {
+        const response = await Stories.addNewStory(formData);
+        toastr.success(response.data.message);
+
+        window.setTimeout(() => this._goToDashboardPage(), 5000);
+      } catch (err) {
+        const message = err.response.data.message;
+        toastr.error(message);
+      }
     }
   },
 
@@ -36,7 +48,7 @@ const AddStory = {
     return {
       description: descInput.value,
       photo: photoInput.files[0],
-    }
+    };
   },
 
   _validateFormData(formData) {

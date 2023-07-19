@@ -7,6 +7,7 @@ import './components/index';
 //import js file as needed
 import Dashboard from './pages/dashboard';
 import AddStory from './pages/stories/add-story';
+import DetailStory from './pages/stories/detail-story';
 import Profile from './pages/profile/profile';
 import ProfileEdit from './pages/profile/edit';
 import Login from './pages/auth/login';
