@@ -1,5 +1,8 @@
+import CheckUserAuth from '../pages/auth/check-auth-user';
+
 const Dashboard = {
   async init() {
+    CheckUserAuth.checkLoginState();
     await this._initialData();
   },
 

@@ -9,6 +9,8 @@ import Dashboard from './pages/dashboard';
 import AddStory from './pages/stories/add-story';
 import Profile from './pages/profile/profile';
 import ProfileEdit from './pages/profile/edit';
+import Login from './pages/auth/login';
+import Register from './pages/auth/register';
 
 // Import javascript file as needed
 import * as bootstrap from 'bootstrap';
@@ -18,6 +20,9 @@ const routes = {
   '/stories/add.html': AddStory,
   '/profile/profile.html': Profile,
   '/profile/edit.html': ProfileEdit,
+
+  '/auth/login.html': Login,
+  '/auth/register.html': Register,
 }
 
 const detectRoute = () => routes[window.location.pathname];

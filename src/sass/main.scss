@@ -1,4 +1,4 @@
-@use 'vendors';
+@use 'vendors/index';
 
 $primary-color: #212529;
 $text-color: rgb(255, 255, 255);
@@ -34,4 +34,13 @@ header {
 .btn {
     @include bg-color;
     color: white;
+}
+
+footer {
+    @include bg-color;
+    a {
+        text-decoration: none;
+        font-weight: 600;
+        color: white;
+    }
 }

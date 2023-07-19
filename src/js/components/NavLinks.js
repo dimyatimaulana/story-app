@@ -12,7 +12,7 @@ class NavLinks extends LitWithoutShadowDom {
         <nav-link to="/" content="Home" iconClass="bi bi-house-fill fs-4"></nav-link>
         <nav-link to="/stories/add.html" content="Add Story" iconClass="bi bi-file-earmark-plus-fill fs-4"></nav-link>
         <nav-link to="/profile/profile.html" content="Profile" iconClass="bi bi-person-fill fs-4"></nav-link>
-        <nav-link to="/" content="Login" iconClass="bi bi-box-arrow-in-right fs-4"></nav-link>
+        <nav-link-auth to="/auth/login.html" content="Logout" iconClass="bi bi-box-arrow-in-right fs-4"></nav-link-auth>
       </ul>
     `
   }
