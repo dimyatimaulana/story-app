@@ -5,7 +5,7 @@ class NavLink extends LitWithoutShadowDom {
   static properties = {
     content: { type: String, reflect: true },
     to: { type: String, reflect: true },
-    iconClass: { type:String, reflect: true },
+    iconClass: { type: String, reflect: true },
   };
 
   constructor() {

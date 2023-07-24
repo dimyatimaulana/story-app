@@ -21,16 +21,16 @@ const Stories = {
   // },
 
   async getAllStories() {
-    return await instance({
+    return instance({
       url: ApiEndpoint.GET_ALL_STORIES,
-      method: "GET",
+      method: 'GET',
     });
   },
 
   async getDetailStory(id) {
-    return await instance({
+    return instance({
       url: ApiEndpoint.DETAIL_STORY(id),
-      method: "GET",
+      method: 'GET',
     });
   },
 
@@ -45,7 +45,7 @@ const Stories = {
   async addNewStory({ description, photo }) {
     const data = { description, photo };
 
-    return await axios.post(ApiEndpoint.ADD_NEW_STORY, data, {
+    return axios.post(ApiEndpoint.ADD_NEW_STORY, data, {
       headers: {
         'Content-Type': 'multipart/form-data',
         Authorization: `Bearer ${Utils.getUserToken(Config.USER_TOKEN_KEY)}`,
@@ -56,8 +56,8 @@ const Stories = {
   async addNewStoryGuest({ descriptions, photo }) {
     const data = { descriptions, photo };
 
-    return await axios.post(ApiEndpoint.ADD_NEW_STORY_GUEST, data);
-  }
-}
+    return axios.post(ApiEndpoint.ADD_NEW_STORY_GUEST, data);
+  },
+};
 
 export default Stories;

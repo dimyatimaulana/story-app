@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import CheckUserAuth from '../auth/check-auth-user';
 import Stories from '../../network/stories';
 
@@ -35,7 +36,7 @@ const AddStory = {
 
         window.setTimeout(() => this._goToDashboardPage(), 5000);
       } catch (err) {
-        const message = err.response.data.message;
+        const { message } = err.response.data;
         toastr.error(message);
       }
     }

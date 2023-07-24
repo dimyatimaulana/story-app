@@ -16,6 +16,7 @@ const CheckUserAuth = {
         this._showLoginMenuOrUserLogMenu(isUserSignedIn);
       }
     } else {
+      // eslint-disable-next-line no-lonely-if
       if (!isUserOnAuthPage) {
         window.location.href = '/auth/login.html';
       }

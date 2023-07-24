@@ -1,3 +1,5 @@
+import Utils from '../../utils/utils';
+
 const ProfileEdit = {
   async init() {
     await this._initialData();
@@ -5,21 +7,9 @@ const ProfileEdit = {
   },
 
   async _initialData() {
-    const userId = this._getUserId();
+    const user = Utils.getUserToken('user');
 
-    if (!userId) {
-      alert('User dengan id yang dicari tidak ditemukan');
-      return;
-    }
-
-    const endpointUrl = 'https://raw.githubusercontent.com/dicodingacademy/a565-webtools-labs/099-shared-files/proyek-awal/DATA.json'
-    const fetchRecords = await fetch(endpointUrl);
-    const responseRecords = await fetchRecords.json();
-    const userProfile = responseRecords.listStory[0];
-
-    // const dataRecord = userProfile.match((item) => item.id === userId);
-;
-    this._populateUserToForm(userProfile);
+    this._populateUserToForm(user);
   },
 
   _initialListener() {
@@ -71,16 +61,10 @@ const ProfileEdit = {
     window.location.href = '/';
   },
 
-  _populateUserToForm(userRecord = null) {
-    if (!(typeof userRecord === 'object')) {
-      throw new Error(
-        `Parameter userRecord should be an object. The value is ${userRecord}`,
-      );
-    }
-
+  _populateUserToForm(user = null) {
     const nameInput = document.querySelector('#validationCustomName');
 
-    nameInput.value = userRecord.name;
+    nameInput.value = user;
   },
 };
 

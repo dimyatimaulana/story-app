@@ -2,10 +2,6 @@ import { html } from 'lit';
 import LitWithoutShadowDom from './base/LitWithoutShadowDom';
 
 class NavLinks extends LitWithoutShadowDom {
-  constructor() {
-    super();
-  }
-
   render() {
     return html`
       <ul class="nav nav-pills flex-column mt-4">
@@ -14,7 +10,7 @@ class NavLinks extends LitWithoutShadowDom {
         <nav-link to="/profile/profile.html" content="Profile" iconClass="bi bi-person-fill fs-4"></nav-link>
         <nav-link-auth to="/auth/login.html" content="Logout" iconClass="bi bi-box-arrow-in-right fs-4"></nav-link-auth>
       </ul>
-    `
+    `;
   }
 }
 

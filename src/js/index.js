@@ -4,17 +4,17 @@ import '../sass/main.scss';
 // import components
 import './components/index';
 
-//import js file as needed
+// import js file as needed
 import Dashboard from './pages/dashboard';
 import AddStory from './pages/stories/add-story';
-import DetailStory from './pages/stories/detail-story';
+// import DetailStory from './pages/stories/detail-story';
 import Profile from './pages/profile/profile';
 import ProfileEdit from './pages/profile/edit';
 import Login from './pages/auth/login';
 import Register from './pages/auth/register';
 
 // Import javascript file as needed
-import * as bootstrap from 'bootstrap';
+// import * as bootstrap from 'bootstrap';
 
 const routes = {
   '/': Dashboard,
@@ -24,7 +24,7 @@ const routes = {
 
   '/auth/login.html': Login,
   '/auth/register.html': Register,
-}
+};
 
 const detectRoute = () => routes[window.location.pathname];
 
@@ -38,7 +38,7 @@ const initPages = () => {
   }
 };
 
-window.addEventListener('DOMContentLoaded', async () =>{
+window.addEventListener('DOMContentLoaded', async () => {
   initPages();
 
   const route = detectRoute();

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import Auth from '../../network/auth';
 import CheckUserAuth from './check-auth-user';
 
@@ -6,6 +7,7 @@ const Register = {
     CheckUserAuth.checkLoginState();
 
     this._initialListener();
+    this._checkVisibilityPassword();
   },
 
   _initialListener() {
@@ -31,18 +33,20 @@ const Register = {
       console.log(formData);
 
       try {
+        const loadingContainer = document.querySelector('#loadingContainer');
+        loadingContainer.innerHTML += this._spinnerLoading();
         const response = await Auth.register({
           name: formData.name,
           email: formData.email,
           password: formData.password,
         });
 
-        console.log(response);
-
         toastr.success(response.data.message);
+        loadingContainer.innerHTML = '';
         window.setTimeout(() => this._goToLoginPage(), 5000);
       } catch (err) {
-        const message = err.response.data.message;
+        const { message } = err.response.data;
+        loadingContainer.innerHTML = '';
         toastr.error(message);
       }
     }
@@ -68,6 +72,43 @@ const Register = {
 
   _goToLoginPage() {
     window.location.href = '/auth/login.html';
+  },
+
+  _checkVisibilityPassword() {
+    const button = document.querySelector('.input-group-text');
+    const inputPw = document.querySelector('.input-group input');
+    const eyeIcon = document.querySelector('#showHidePassword');
+
+    button.addEventListener('click', () => {
+      if (inputPw.type === 'password') {
+        inputPw.type = 'text';
+        eyeIcon.classList.remove('bi-eye-slash');
+        eyeIcon.classList.add('bi-eye');
+      } else if (inputPw.type === 'text') {
+        inputPw.type = 'password';
+        eyeIcon.classList.remove('bi-eye');
+        eyeIcon.classList.add('bi-eye-slash');
+      }
+    });
+  },
+
+  _spinnerLoading() {
+    return `
+      <div class="container d-flex m-auto justify-content-between" style="max-width: 300px;">
+        <div class="spinner-grow text-success" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-danger" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-warning" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-info" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    `;
   },
 };
 

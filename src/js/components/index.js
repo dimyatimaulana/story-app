@@ -7,6 +7,7 @@ import './StoryCard';
 
 import './form/InputWithValidation';
 import './form/InputPasswordWithValidation';
+import './form/InputGroupPassword';
 import './form/TextAreaWithValidation';
 import './form/InputImage';
 

@@ -39,27 +39,26 @@ class InputPasswordWithValidation extends LitWithoutShadowDom {
         value=${this.value || nothing}
         ?required=${this.required}
         @input=${(e) => {
-          const pwInput = document.querySelector('#validationCustomPassword')
-          this.value = e.target.value;
-          if (this.value.length < 8) {
-            this.invalidFeedbackMessage = this.invalidFeedbackMessage2;
+    const pwInput = document.querySelector('#validationCustomPassword');
+    this.value = e.target.value;
+    if (this.value.length < 8) {
+      this.invalidFeedbackMessage = this.invalidFeedbackMessage2;
 
-            pwInput.classList.add('is-invalid');
+      pwInput.classList.add('is-invalid');
 
-            const invalidMsg = document.querySelector('.invalid-password');
-            invalidMsg.classList.add('d-block');
-
-          }
-          if (this.value.length >= 8 || this.value == null || this.value == '') {
-            const invalidMsg = document.querySelector('.invalid-password');
-            invalidMsg.classList.remove('d-block');
-          }
-          if (this.value == '' || this.value == null) {
-            this.invalidFeedbackMessage = 'Password required!';
-            pwInput.classList.remove('is-invalid');
-            pwInput.classList.add('is-valid');
-          }
-        }}
+      const invalidMsg = document.querySelector('.invalid-password');
+      invalidMsg.classList.add('d-block');
+    }
+    if (this.value.length >= 8 || this.value == null || this.value === '') {
+      const invalidMsg = document.querySelector('.invalid-password');
+      invalidMsg.classList.remove('d-block');
+    }
+    if (this.value === '' || this.value == null) {
+      this.invalidFeedbackMessage = 'Password required!';
+      pwInput.classList.remove('is-invalid');
+      pwInput.classList.add('is-valid');
+    }
+  }}
       />
 
       ${this._validFeedbackTemplate()}
